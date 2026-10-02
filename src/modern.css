@@ -1,0 +1,132 @@
+/* modern.css : lapisan polesan di atas style.css (di-import SETELAH style.css) */
+::selection{background:var(--yellow);color:#000}
+html{scroll-padding-top:76px}
+body{background:#e7e6e1;padding:clamp(8px,1.8vw,22px)}
+
+/* Frame jadi "kertas" dengan bayangan keras */
+.frame{background:var(--paper);box-shadow:10px 10px 0 var(--ink)}
+
+/* Nav nempel di atas saat scroll */
+nav{position:sticky;top:0;z-index:5;background:var(--paper)}
+nav a{transition:background .12s,color .12s}
+
+/* Tombol bergaya "ditekan" */
+.btn{box-shadow:4px 4px 0 var(--ink);transition:transform .12s,box-shadow .12s,background .12s}
+.btn:hover{transform:translate(4px,4px);box-shadow:0 0 0 var(--ink)}
+
+/* ===== HERO: kiri teks, kanan foto ===== */
+.hero{grid-template-columns:1fr}
+@media(min-width:901px){.hero{grid-template-columns:1fr clamp(280px,24vw,400px)}}
+.hero-main{display:flex;flex-direction:column;justify-content:space-between;gap:28px;padding:clamp(18px,2.4vw,34px)}
+.hero-main h1{padding:0;animation:rise .9s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{clip-path:inset(0 0 100% 0);transform:translateY(28px)}to{clip-path:inset(0);transform:none}}
+.hero-foot{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:20px}
+.hero-foot p{font-weight:800;text-transform:uppercase;font-size:15px;max-width:34ch}
+
+/* Kotak foto: ngisi penuh kolom kanan */
+.mono{min-height:380px;aspect-ratio:auto;align-self:stretch;background:radial-gradient(rgba(255,212,0,.35) 1.5px,transparent 1.5px) 0 0/18px 18px,var(--ink)}
+.mono img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%}
+.mono i{z-index:1;background:var(--ink);padding:4px 8px}
+
+/* Ticker stack berjalan */
+.ticker{border-top:var(--b);border-bottom:var(--b);margin:-1.5px 0;background:var(--ink);color:var(--yellow);overflow:hidden;padding:14px 0}
+.ticker-track{display:flex;width:max-content;animation:tick 30s linear infinite}
+.ticker-track span{display:flex}
+.ticker b{font-family:Anton,Impact,sans-serif;font-weight:400;font-size:clamp(22px,3vw,34px);text-transform:uppercase;white-space:nowrap}
+.ticker b::after{content:"/";margin:0 clamp(22px,3vw,40px);color:var(--paper)}
+@keyframes tick{to{transform:translateX(calc(-100% / 6))}}
+
+/* Baris proyek */
+.proj>.cell:not(.n){padding:clamp(18px,2vw,30px)}
+.proj .t h3::after{content:" ↗";display:inline-block;opacity:0;transform:translate(-6px,6px);transition:.2s}
+.proj:hover .t h3::after{opacity:1;transform:none}
+.proj .v:not(.has-img){background:repeating-linear-gradient(135deg,#000 0 14px,#1c1c1c 14px 28px)}
+.proj .v.has-img{min-height:190px}
+
+/* Galeri */
+.gal figure{overflow:hidden}
+.gal img{transition:transform .5s}
+.gal figure:hover img{transform:scale(1.04)}
+
+/* Mobile */
+@media(max-width:900px){
+  nav{position:static}
+  .frame{box-shadow:5px 5px 0 var(--ink)}
+  nav .cta{grid-column:1/-1}
+
+  /* Foto profil di HP: kecil, di sisi kiri strip */
+  .mono{display:flex;align-items:center;justify-content:flex-start;gap:16px;min-height:0;aspect-ratio:auto;align-self:auto;padding:14px 18px}
+  .mono b{display:none}
+  .mono img{position:static;width:112px;height:112px;flex:none;object-fit:cover;object-position:center 12%;border:3px solid var(--paper)}
+  .mono i{position:static;margin-left:auto;align-self:flex-end}
+}
+
+/* Galeri rapi: kotak seragam 16:9, otomatis 2-3 kolom */
+.gal{grid-template-columns:repeat(auto-fit,minmax(min(100%,380px),1fr))}
+.gal figure{overflow:hidden;aspect-ratio:16/9}
+.gal figure a{display:block;height:100%;cursor:zoom-in}
+.gal img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.gal .ph{height:100%;min-height:0}
+
+/* Cover di kartu halaman utama: tampilkan bagian atas screenshot */
+.proj .v.has-img{min-height:230px;background-position:top center}
+
+.head-title{font-size:clamp(40px,4.4vw,76px);margin-bottom:14px}
+.head-note{font-size:13px;font-weight:800;text-transform:uppercase;max-width:22ch;line-height:1.35}
+
+:root{--red:#ffd400;--yellow:#ffd400}
+
+body{font-family:'Space Grotesk',Arial,sans-serif}
+.small,nav>*,.btn,.proj .t span,.proj .v small,.acc li{font-family:'Space Mono',monospace}
+
+.proj p{font-size:15px;line-height:1.55}
+.proj .t h3{font-size:clamp(22px,2vw,32px)}
+
+.work .proj:nth-child(3) .v.has-img{background-position:center 100%!important;min-height:300px}
+
+/* Halaman detail proyek */
+.dtitle{display:flex;flex-direction:column;justify-content:space-between;gap:24px;padding:clamp(18px,2.4vw,34px)}
+.dtitle h1{padding:0}
+.dhead>.cell:last-child{padding:clamp(22px,2.6vw,40px)}
+.dhead p{font-size:clamp(17px,1.4vw,21px);line-height:1.65;max-width:62ch;margin-bottom:22px}
+.tags li{font-size:14px;padding:6px 12px}
+
+/* Detail proyek: judul di tengah, ukuran lebih kecil di layar lebar */
+.dtitle{align-items:center;justify-content:center;text-align:center;gap:12px;padding:clamp(24px,3vw,44px)}
+.dtitle h1{font-size:clamp(56px,8vw,128px)}
+.dinfo{grid-template-columns:1.5fr 1fr}
+.dinfo .cell{padding:clamp(20px,2.2vw,32px)}
+.dinfo p{font-size:clamp(15px,1.1vw,17px);line-height:1.7;max-width:62ch}
+.dinfo .tags{margin-top:12px}
+.gal{grid-template-columns:repeat(auto-fit,minmax(min(100%,360px),1fr))}
+
+@media(max-width:900px){
+  .dinfo{grid-template-columns:1fr}
+}
+
+/* Deskripsi rata kiri-kanan */
+.proj p,.dinfo p,.about p{text-align:justify;text-justify:inter-word;hyphens:auto}
+
+.strip{grid-template-columns:1fr auto}
+@media(max-width:900px){ .strip{grid-template-columns:1fr} }
+
+/* ===== Judul "Selected work": web = tengah ===== */
+.work .head{align-items:center;justify-content:center;text-align:center;gap:28px}
+.head-note{margin-inline:auto}
+
+@media(max-width:900px){
+  /* ===== Judul "Selected work": HP = menyamping ===== */
+  .work .head{display:grid;grid-template-columns:1fr auto;grid-template-areas:"label arrow" "title title";align-items:center;gap:10px 16px;padding:16px 18px;text-align:left}
+  .work .head>span:first-child{grid-area:label}
+  .work .head>span:last-child{grid-area:arrow}
+  .work .head>div{grid-area:title;display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px 18px}
+  .head-title{margin:0}
+  .head-title br{display:none}
+  .head-note{margin:0}
+
+  /* ===== Baris proyek: angka + nama jadi satu baris ===== */
+  .proj{grid-template-columns:auto 1fr}
+  .proj>.cell:nth-child(3),.proj>.v{grid-column:1/-1}
+  .proj .n{align-items:center;justify-content:center;padding:10px 18px;font-size:clamp(52px,15vw,76px);line-height:1}
+  .proj .t h3{font-size:clamp(18px,5vw,24px)}
+}
