@@ -9,6 +9,7 @@ import { profile } from '../data/projects'
     <div class="cell"><span class="small">Ikuti</span>
       <ul>
         <li><a :href="profile.github" target="_blank" rel="noopener">GitHub</a></li>
+        <li v-if="profile.instagram"><a :href="profile.instagram" target="_blank" rel="noopener">Instagram</a></li>
         <li v-if="profile.linkedin"><a :href="profile.linkedin" target="_blank" rel="noopener">LinkedIn</a></li>
       </ul>
     </div>

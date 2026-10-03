@@ -130,3 +130,59 @@ body{font-family:'Space Grotesk',Arial,sans-serif}
   .proj .n{align-items:center;justify-content:center;padding:10px 18px;font-size:clamp(52px,15vw,76px);line-height:1}
   .proj .t h3{font-size:clamp(18px,5vw,24px)}
 }
+
+/* ===== Rapiin baris proyek ===== */
+@media(min-width:901px){
+  .proj{grid-template-columns:clamp(130px,11vw,180px) 1fr 1.1fr 1fr;min-height:240px}
+  .proj .n{font-size:clamp(64px,7.2vw,118px);padding:0 14px;align-items:center}
+  .work .proj .v{min-height:0!important}
+}
+.proj p{text-align:left;hyphens:manual;max-width:54ch;font-size:16px}
+.about p{text-align:left;hyphens:manual}
+
+.proj .t h3::after{margin-left:.35em}
+
+/* ===== Satu sistem garis: semua section berbagi garis vertikal yang sama ===== */
+:root{--side:clamp(200px,20vw,400px);--desc:clamp(220px,22vw,480px);--num:clamp(96px,9vw,160px)}
+
+@media(min-width:901px){
+  .hero{grid-template-columns:1fr var(--side)}
+  .strip{grid-template-columns:auto 1fr var(--side)}
+  .work{grid-template-columns:19% 1fr}
+  .proj{grid-template-columns:var(--num) 1fr var(--desc) var(--side)}
+  .about{grid-template-columns:19% 1fr calc(var(--desc) + var(--side))}
+  .foot{grid-template-columns:1fr var(--desc) var(--side)}
+
+  /* label SKILLS pindah jadi judul di atas accordion, biar garis vertikalnya nggak nambah */
+  .about .vert{display:none}
+  .acc::before{content:"Skills";display:block;padding:14px 22px;border-bottom:var(--b);font:800 13px 'Space Mono',monospace;text-transform:uppercase}
+}
+.mail{font-size:clamp(18px,1.9vw,40px)}
+
+/* ===== Label SKILLS: latar hitam, teks putih besar ===== */
+.about .vert{background:var(--ink);color:var(--paper);font-size:clamp(26px,2.6vw,40px);letter-spacing:.04em;padding:22px 16px}
+.acc::before{background:var(--ink);color:var(--paper);font-size:clamp(22px,2.2vw,34px);padding:18px 26px}
+
+/* Kategori skill yang terbuka: kuning, bukan hitam */
+.acc details[open] summary{background:var(--yellow);color:var(--ink)}
+.acc summary:hover{background:#ececec}
+
+/* ===== Bagian "Ikuti": lebih besar ===== */
+.foot .cell:last-child .small{font-size:clamp(14px,1.1vw,18px)}
+.foot ul{display:flex;flex-wrap:wrap;gap:10px 36px;margin-top:16px;font-size:clamp(17px,1.5vw,24px);line-height:1}
+.foot ul a{display:inline-block;padding:2px 0}
+.foot ul a::after{content:" ↗";font-size:.55em}
+.foot ul a:hover{background:var(--yellow);text-decoration:none}
+
+/* ===== Navbar: garis sejajar dengan grid di bawahnya ===== */
+@media(min-width:901px){
+  nav{grid-template-columns:auto 1fr repeat(4,minmax(calc(var(--desc) / 4),auto)) var(--side)}
+  nav a:not(.logo):not(.cta){justify-content:center;padding-inline:8px}
+  nav .cta{justify-content:space-between}
+  .strip{grid-template-columns:1fr var(--side)}
+}
+@media(min-width:1200px){nav .role{white-space:nowrap}}
+nav .logo{letter-spacing:0;font-size:clamp(26px,2.2vw,34px)}
+
+/* Jabatan di navbar: seimbang dengan nama */
+nav .role{font-size:clamp(14px,1.25vw,19px);line-height:1.25;letter-spacing:.01em}

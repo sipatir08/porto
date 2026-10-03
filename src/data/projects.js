@@ -5,6 +5,7 @@
 export const profile = {
   email: 'fathir080604@gmail.com',
   github: 'https://github.com/sipatir08',
+  instagram: 'https://instagram.com/mfthr.08',
   linkedin: ''
 }
 

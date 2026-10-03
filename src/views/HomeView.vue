@@ -12,7 +12,7 @@ onMounted(() => (document.title = 'Muhammad Fathir | Backend Developer & QA Engi
   <div class="cell hero-main">
     <h1 class="d">I build backends that don't break.</h1>
     <div class="hero-foot">
-      <p>Backend developer dan QA engineer di Bandung. Golang, PostgreSQL, dan test yang jalan sebelum rilis.</p>
+      
       <RouterLink class="btn" to="/#work"><span class="dot"></span>Lihat proyek <span>↗</span></RouterLink>
     </div>
   </div>
@@ -42,10 +42,10 @@ onMounted(() => (document.title = 'Muhammad Fathir | Backend Developer & QA Engi
   <div class="cell head">
     <span>Proyek pilihan ({{ String(projects.length).padStart(2, '0') }})</span>
     <div>
-      <h2 class="d head-title">Selected<br>work</h2>
+      <h2 class="d head-title">Selected<br> work</h2>
       <p class="head-note">Backend, produk sendiri, dan QA.</p>
     </div>
-    <span style="font-size:28px">↓</span>
+    <span style="font-size:28px"></span>
   </div>
   <div><ProjectCard v-for="p in projects" :key="p.id" :p="p" /></div>
 </section>

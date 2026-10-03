@@ -3,8 +3,8 @@ import { profile } from '../data/projects'
 </script>
 <template>
   <nav>
-    <RouterLink class="logo" to="/">FATHIR.</RouterLink>
-    <div class="role">Backend Developer<br>& QA Engineer</div>
+    <RouterLink class="logo" to="/">MMUHAMNMAD FATHIR.</RouterLink>
+    <div class="role">Backend Developer &amp; QA Engineer</div>
     <RouterLink to="/#work">Work</RouterLink>
     <RouterLink to="/#about">About</RouterLink>
     <RouterLink to="/#skills">Skills</RouterLink>
