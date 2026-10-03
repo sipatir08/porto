@@ -186,3 +186,17 @@ nav .logo{letter-spacing:0;font-size:clamp(26px,2.2vw,34px)}
 
 /* Jabatan di navbar: seimbang dengan nama */
 nav .role{font-size:clamp(14px,1.25vw,19px);line-height:1.25;letter-spacing:.01em}
+
+/* ===== Ganti kuning jadi biru tua ===== */
+:root{--yellow:#14532d;--red:#14532d;--tint:#86efac}
+
+/* teks di atas warna tua jadi putih */
+.y,.r,nav .cta,.btn.y,.star,.proj:hover,.acc details[open] summary{color:#fff}
+.acc details[open] summary{background:var(--yellow)}
+nav .cta:hover{background:var(--ink);color:#fff}
+.btn.y:hover{color:#fff}
+.mail:hover,.foot ul a:hover{color:#fff}
+
+/* teks yang tadinya kuning di atas hitam: pakai warna terang */
+.ticker,.mono,.proj .v small,.mono .id span{color:var(--tint)}
+.foot .go:hover{color:var(--tint)}
