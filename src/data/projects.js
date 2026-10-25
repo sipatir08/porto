@@ -15,7 +15,7 @@ export const projects = [
     desc: 'OniKomik adalah platform baca manga, manhwa, dan manhua berbahasa Indonesia yang bisa diakses gratis. Pengguna bisa mencari judul, menyaring berdasarkan genre, status, dan tipe, melihat komik terpopuler, serta menyimpan daftar favorit. Backend-nya dibangun sendiri dengan Golang dan PostgreSQL, dioptimasi untuk SEO supaya halaman komik mudah ditemukan lewat mesin pencari. Aset gambar komik dalam jumlah besar disimpan di Cloudflare R2, dan seluruh layanan berjalan di self-hosted server yang dikelola sendiri.',
     tags: ['Go', 'PostgreSQL', 'Cloudflare R2', 'Self-hosted'], cover: 'OniKomik', stack: 'Go · PostgreSQL · R2',
     images: ['/img/onikomik1.jpeg', '/img/onikomik2.jpeg', '/img/onikomik3.jpeg'],
-    links: [{ t: 'Buka situs', u: 'https://www.onikomik.fun/' }] },
+    links: [{ t: 'Buka situs', u: 'https://www.onikomik.my.id/' }] },
   { id: 'assiaf', n: '02', title: 'Assiaf Foundation', meta: 'Backend Developer · Dec 2025–Feb 2026',
     short: 'Backend portal donasi online dengan integrasi pembayaran QRIS dan sinkronisasi data donasi real-time.',
     desc: 'Portal donasi online untuk Assiaf Foundation, dikerjakan Desember 2025 sampai Februari 2026 bersama tim frontend. Sebagai backend developer, gua membangun layanan dengan Golang dan PostgreSQL, mengintegrasikan payment gateway QRIS untuk memproses donasi, dan merancang REST API supaya data donasi tersinkron secara real-time ke tampilan.',
