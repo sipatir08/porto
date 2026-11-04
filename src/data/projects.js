@@ -24,7 +24,7 @@ export const projects = [
     links: [{ t: 'Buka situs', u: 'https://www.assiaf.com/' }] },
   { id: 'damri', n: '03', title: 'Perum DAMRI', meta: 'QA Automation Intern · Sep–Dec 2025',
     short: 'Automation testing dengan Katalon Studio, lengkap dengan test case, laporan bug, dan dokumentasi UAT.',
-    desc: 'Magang sebagai QA Automation Intern di Perum DAMRI Bandung (September sampai Desember 2025). Menjalankan automation testing dengan Katalon Studio untuk memastikan aplikasi stabil sebelum rilis, menyusun test case dan laporan bug, serta mendokumentasikan hasil UAT untuk proses QA internal.',
+    desc: 'Magang sebagai QA Automation Intern di Perum DAMRI (September sampai Desember 2025). Menjalankan automation testing dengan Katalon Studio untuk memastikan aplikasi stabil sebelum rilis, menyusun test case dan laporan bug, serta mendokumentasikan hasil UAT untuk proses QA internal.',
     tags: ['Katalon Studio', 'Test case', 'Bug report'], pos: 'center 100%', cover: 'QA', stack: 'Katalon Studio',
     images: ['/img/damri1.jpeg', '/img/damri2.png', '/img/damri3.png'], links: [] }
 ]
